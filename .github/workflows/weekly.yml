@@ -1,0 +1,46 @@
+name: FreshMart Weekly Ad
+
+on:
+  schedule:
+    # Every Monday at 8:00 AM UTC
+    # Adjust the hour if you want a different timezone:
+    #   EST (UTC-5): 13:00  →  "0 13 * * 1"
+    #   CST (UTC-6): 14:00  →  "0 14 * * 1"
+    #   PST (UTC-8): 16:00  →  "0 16 * * 1"
+    - cron: "0 13 * * 1"
+
+  # Lets you trigger a run manually from the GitHub Actions tab
+  # Useful for testing without waiting for Monday
+  workflow_dispatch:
+
+jobs:
+  generate-weekly-ad:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write        # push a branch
+      pull-requests: write   # open a PR
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Configure git identity
+        run: |
+          git config --global user.name  "FreshMart Agents"
+          git config --global user.email "agents@freshmart.local"
+
+      - name: Run agents and open PR
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN:      ${{ secrets.GH_TOKEN }}
+          REPO_PATH:         ${{ github.workspace }}
+        run: python runner.py --run-now
