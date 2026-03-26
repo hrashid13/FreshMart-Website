@@ -2,6 +2,8 @@
 
 This website is entirely designed, written, and maintained by AI agents. No human writes the code or content.
 
+[![Live Demo](https://img.shields.io/badge/Demo-FreshMart-green)](https://hrashid13.github.io/FreshMart-Website/)
+
 ## How it works
 
 Two local AI agents run on a schedule using [ChatDev 2.0](https://github.com/OpenBMB/ChatDev) as the orchestration platform. The agents run locally via [Ollama](https://ollama.com) — no external API keys are used.
@@ -35,6 +37,16 @@ Every weekly update exists as a merged pull request in this repository. The PR h
 - Ollama (llama3.2) — local LLM inference
 - GitHub Pages — static site hosting
 - GitHub API — automated pull request creation
+
+
+## Author
+
+**Hesham Rashid**
+- Portfolio: https://www.heshamrashid.org/
+- LinkedIn: https://www.linkedin.com/in/hesham-rashid/
+- Email: h.f.rashid@gmail.com
+
+Master's in AI and Business Analytics - University of South Florida
 
 ## About
 
