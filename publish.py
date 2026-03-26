@@ -22,7 +22,7 @@ import requests
 
 
 REPO_PATH    = Path(os.environ.get("REPO_PATH", "/home/pi/FreshMart-Website"))
-GITHUB_TOKEN = os.environ.get("GH_TOKEN", "")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_REPO  = "hrashid13/FreshMart-Website"
 BASE_BRANCH  = "main"
 
