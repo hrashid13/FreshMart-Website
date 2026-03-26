@@ -1,2 +1,29 @@
+# Environment variables - never commit these
 .env
+*.env
+.env.*
+!.env.example
+
+# Windows files
 Commands.docx
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
