@@ -6,6 +6,9 @@ Calls three Claude API agents in sequence:
   2. Coder Agent  — turns the ad into index.html
   3. Style Agent  — produces style.css themed to match the week's ad
 
+Before running the Idea Agent, fetches the last merged PR title from GitHub
+so the agent knows what theme was used last week and avoids repeating it.
+
 Then hands off to publish.py which pushes a branch and opens a PR on GitHub.
 You review the PR and decide whether to merge. That is the only human step.
 
@@ -22,6 +25,7 @@ import sys
 import time
 
 import anthropic
+import requests
 import schedule
 
 # ---------------------------------------------------------------------------
@@ -142,6 +146,46 @@ The weekly theme is:\
 
 
 # ---------------------------------------------------------------------------
+# GitHub helper — fetch the last weekly ad theme from merged PRs
+# ---------------------------------------------------------------------------
+
+def get_last_theme() -> str:
+    """Look at the most recent closed PRs and return the last weekly theme used."""
+    token = os.environ.get("GITHUB_TOKEN", "")
+    if not token:
+        log.warning("GITHUB_TOKEN not set — cannot fetch last theme, will skip.")
+        return ""
+    try:
+        response = requests.get(
+            "https://api.github.com/repos/hrashid13/FreshMart-Website/pulls",
+            headers={
+                "Authorization": "token " + token,
+                "Accept": "application/vnd.github.v3+json",
+            },
+            params={
+                "state": "closed",
+                "per_page": 10,
+                "sort": "updated",
+                "direction": "desc",
+            },
+            timeout=10,
+        )
+        if response.status_code != 200:
+            log.warning("GitHub PR fetch returned " + str(response.status_code) + " — skipping last theme check.")
+            return ""
+        for pr in response.json():
+            title = pr.get("title", "")
+            if "Weekly Ad Update" in title:
+                # Title format: "Weekly Ad Update: Harvest Festival (2026-03-30)"
+                match = re.search(r'Weekly Ad Update:\s*(.+?)\s*\(', title)
+                if match:
+                    return match.group(1).strip()
+    except Exception as e:
+        log.warning("Could not fetch last theme: " + str(e))
+    return ""
+
+
+# ---------------------------------------------------------------------------
 # Claude API helper
 # ---------------------------------------------------------------------------
 
@@ -191,8 +235,20 @@ def weekly_job():
     log.info("Weekly job started")
 
     try:
+        # Check what theme was used last week and tell the Idea Agent to avoid it
+        last_theme = get_last_theme()
+        if last_theme:
+            log.info("Last theme was: " + last_theme + " — instructing agent to avoid it")
+            user_message = (
+                "Do NOT use this theme or anything similar to it: " + last_theme + "\n\n"
+                "Generate this week's FreshMart ad with a completely different theme."
+            )
+        else:
+            log.info("No previous theme found — agent will pick freely")
+            user_message = "Generate this week's FreshMart ad."
+
         log.info("Running Idea Agent...")
-        idea_text = call_claude(IDEA_AGENT_PROMPT, "Generate this week's FreshMart ad.")
+        idea_text = call_claude(IDEA_AGENT_PROMPT, user_message)
         theme = extract_theme(idea_text)
         log.info("Idea Agent done. Theme: " + theme)
 
