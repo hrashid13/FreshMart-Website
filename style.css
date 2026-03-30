@@ -2,134 +2,120 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f8f4e6 0%, #fff9e6 100%);
-    color: #2d3436;
+    background: linear-gradient(135deg, #FFE066 0%, #FF6B35 50%, #004E89 100%);
+    min-height: 100vh;
+    color: #1A1A2E;
 }
 
 header {
-    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    background: linear-gradient(45deg, #004E89, #0066CC);
     color: white;
-    padding: 2rem 0;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 78, 137, 0.3);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.5em;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-header p {
-    margin: 0.5rem 0 0 0;
-    font-size: 1.2rem;
-    opacity: 0.95;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
 }
 
 .card {
     background: white;
-    border: 3px solid #fdcb6e;
+    margin: 20px;
+    padding: 25px;
     border-radius: 15px;
-    padding: 1.5rem;
-    margin: 1.5rem auto;
-    max-width: 800px;
-    box-shadow: 0 8px 25px rgba(253, 203, 110, 0.2);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.2);
+    border: 3px solid #FFE066;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(253, 203, 110, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    border-color: #FF6B35;
 }
 
 .card h2 {
-    color: #6c5ce7;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    border-bottom: 2px solid #fdcb6e;
-    padding-bottom: 0.5rem;
+    color: #004E89;
+    border-bottom: 3px solid #FFE066;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
 }
 
-#deals h2:before {
-    content: "📚 ";
+#deals {
+    background: linear-gradient(135deg, #FFE066, #FFF2CC);
+    border-color: #FF6B35;
 }
 
-#recipe h2:before {
-    content: "🍎 ";
-}
-
-#announcement h2:before {
-    content: "⚡ ";
-}
-
-#deals ul {
-    list-style: none;
-    padding: 0;
-}
-
-#deals li {
-    background: linear-gradient(90deg, #ffeaa7, #fdcb6e);
-    margin: 0.8rem 0;
-    padding: 1rem;
-    border-radius: 10px;
-    border-left: 5px solid #e17055;
-    font-weight: 500;
-    color: #2d3436;
-    transition: background 0.3s ease;
-}
-
-#deals li:hover {
-    background: linear-gradient(90deg, #fdcb6e, #e17055);
-    color: white;
+#deals h2 {
+    color: #FF6B35;
+    border-bottom-color: #FF6B35;
 }
 
 #recipe {
-    background: linear-gradient(135deg, #81ecec, #74b9ff);
-    border-color: #0984e3;
-    color: white;
+    background: linear-gradient(135deg, #E6F3FF, #CCE7FF);
+    border-color: #0066CC;
 }
 
 #recipe h2 {
-    color: white;
-    border-bottom-color: #74b9ff;
-}
-
-#recipe p {
-    line-height: 1.6;
-    font-size: 1.1rem;
+    color: #004E89;
+    border-bottom-color: #0066CC;
 }
 
 #announcement {
-    background: linear-gradient(135deg, #fd79a8, #e84393);
-    border-color: #e84393;
-    color: white;
-    text-align: center;
+    background: linear-gradient(135deg, #FFE6CC, #FFCC99);
+    border-color: #FF6B35;
 }
 
 #announcement h2 {
-    color: white;
-    border-bottom-color: #fd79a8;
+    color: #CC4400;
+    border-bottom-color: #FF6B35;
 }
 
-#announcement p {
-    font-size: 1.2rem;
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: rgba(255, 230, 102, 0.3);
+    margin: 10px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border-left: 4px solid #FF6B35;
     font-weight: 500;
-    margin: 1rem 0;
+    transition: background 0.3s ease;
+}
+
+li:hover {
+    background: rgba(255, 230, 102, 0.5);
+    transform: translateX(5px);
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    color: #2C3E50;
 }
 
 footer {
-    background: linear-gradient(45deg, #2d3436, #636e72);
-    color: white;
+    background: linear-gradient(45deg, #1A1A2E, #16213E);
+    color: #FFE066;
     text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
-    box-shadow: 0 -4px 15px rgba(45, 52, 54, 0.2);
+    padding: 25px;
+    margin-top: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
-footer p {
-    margin: 0;
-    font-size: 1rem;
-    opacity: 0.9;
+strong {
+    color: #FF6B35;
+    font-weight: bold;
 }
