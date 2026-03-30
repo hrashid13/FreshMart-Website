@@ -4,7 +4,7 @@ FreshMart AI Agent Runner
 Calls three Claude API agents in sequence:
   1. Idea Agent   — invents the weekly ad content (plain text)
   2. Coder Agent  — turns the ad into index.html
-  3. Style Agent  — produces style.css
+  3. Style Agent  — produces style.css themed to match the week's ad
 
 Then hands off to publish.py which pushes a branch and opens a PR on GitHub.
 You review the PR and decide whether to merge. That is the only human step.
@@ -20,7 +20,6 @@ import os
 import re
 import sys
 import time
-from pathlib import Path
 
 import anthropic
 import schedule
@@ -52,7 +51,7 @@ You are a copywriter. You only write plain text. No HTML. No code. No JSON.
 Write a weekly ad for FreshMart grocery store using EXACTLY this format
 and nothing else. Do not add any explanation before or after.
 
-THEME: Summer Savings Week
+THEME: [pick a fresh, seasonal, or fun theme — never reuse a recent one]
 
 DEALS:
 1. Whole Milk - was $3.99, now $2.99, 25% off
@@ -72,8 +71,9 @@ Steps:
 ANNOUNCEMENT:
 FreshMart is open Monday to Saturday 8am to 9pm and Sunday 9am to 7pm.
 
-Now write your OWN version following that exact format with different
-made-up items, theme, recipe, and announcement. Plain text only.\
+Now write your OWN version following that exact format. Choose a completely
+original theme appropriate for the current season. Different items, different
+theme, different recipe, different announcement. Plain text only.\
 """
 
 CODER_AGENT_PROMPT = """\
@@ -127,75 +127,17 @@ The ad content you must use is below:
 """
 
 STYLE_AGENT_PROMPT = """\
-You are a CSS developer. Output ONLY the following CSS, every line, unchanged.
-No explanation. No HTML. No markdown. No code fences.
+You are a CSS developer. Write a complete style.css for the FreshMart website
+that matches the theme and mood of this week's ad content.
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-}
-header {
-  background-color: #2e7d32;
-  color: white;
-  text-align: center;
-  padding: 1.5em;
-}
-header h1 {
-  margin: 0;
-  font-size: 2em;
-}
-header p {
-  margin: 0.25em 0 0;
-  font-size: 1.1em;
-}
-#deals {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1.5em;
-  gap: 1em;
-}
-.card {
-  background-color: white;
-  border: 2px solid #2e7d32;
-  border-radius: 8px;
-  padding: 1em;
-  min-width: 180px;
-  max-width: 220px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.card h2 {
-  color: #2e7d32;
-  font-size: 1em;
-  margin: 0 0 0.5em;
-}
-.card p {
-  margin: 0;
-  font-size: 0.9em;
-}
-#recipe {
-  background-color: #e8f5e9;
-  padding: 1.5em;
-  margin: 1em auto;
-  max-width: 700px;
-  border-radius: 8px;
-}
-#announcement {
-  background-color: #e8f5e9;
-  padding: 1.5em;
-  margin: 1em auto;
-  max-width: 700px;
-  border-radius: 8px;
-}
-footer {
-  text-align: center;
-  padding: 1em;
-  background-color: #2e7d32;
-  color: white;
-  margin-top: 2em;
-}\
+Rules:
+- Keep the same HTML structure and class names (body, header, .card, #deals, #recipe, #announcement, footer)
+- Change the color scheme to fit the theme — header and footer background, card borders, accent colors
+- Keep the layout and font sizes roughly the same so the site stays readable
+- You can make small creative tweaks to border-radius, shadows, or spacing
+- Output ONLY valid CSS. No explanation. No HTML. No markdown. No code fences.
+
+The weekly theme is:\
 """
 
 
@@ -260,7 +202,7 @@ def weekly_job():
         log.info("Coder Agent done. HTML: " + str(len(html)) + " chars")
 
         log.info("Running Style Agent...")
-        css = call_claude(STYLE_AGENT_PROMPT, "Output the FreshMart stylesheet.")
+        css = call_claude(STYLE_AGENT_PROMPT, theme)
         log.info("Style Agent done. CSS: " + str(len(css)) + " chars")
 
         import publish
@@ -270,7 +212,7 @@ def weekly_job():
 
     except Exception as e:
         log.error("Weekly job FAILED: " + str(e), exc_info=True)
-        sys.exit(1)   # non-zero exit so GitHub Actions marks the run as failed
+        sys.exit(1)
 
 
 # ---------------------------------------------------------------------------
