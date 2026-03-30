@@ -1,66 +1,135 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f8f4e6 0%, #fff9e6 100%);
+    color: #2d3436;
 }
+
 header {
-  background-color: #2e7d32;
-  color: white;
-  text-align: center;
-  padding: 1.5em;
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
 }
+
 header h1 {
-  margin: 0;
-  font-size: 2em;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 header p {
-  margin: 0.25em 0 0;
-  font-size: 1.1em;
+    margin: 0.5rem 0 0 0;
+    font-size: 1.2rem;
+    opacity: 0.95;
 }
-#deals {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1.5em;
-  gap: 1em;
-}
+
 .card {
-  background-color: white;
-  border: 2px solid #2e7d32;
-  border-radius: 8px;
-  padding: 1em;
-  min-width: 180px;
-  max-width: 220px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background: white;
+    border: 3px solid #fdcb6e;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 800px;
+    box-shadow: 0 8px 25px rgba(253, 203, 110, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(253, 203, 110, 0.3);
+}
+
 .card h2 {
-  color: #2e7d32;
-  font-size: 1em;
-  margin: 0 0 0.5em;
+    color: #6c5ce7;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #fdcb6e;
+    padding-bottom: 0.5rem;
 }
-.card p {
-  margin: 0;
-  font-size: 0.9em;
+
+#deals h2:before {
+    content: "📚 ";
 }
+
+#recipe h2:before {
+    content: "🍎 ";
+}
+
+#announcement h2:before {
+    content: "⚡ ";
+}
+
+#deals ul {
+    list-style: none;
+    padding: 0;
+}
+
+#deals li {
+    background: linear-gradient(90deg, #ffeaa7, #fdcb6e);
+    margin: 0.8rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 5px solid #e17055;
+    font-weight: 500;
+    color: #2d3436;
+    transition: background 0.3s ease;
+}
+
+#deals li:hover {
+    background: linear-gradient(90deg, #fdcb6e, #e17055);
+    color: white;
+}
+
 #recipe {
-  background-color: #e8f5e9;
-  padding: 1.5em;
-  margin: 1em auto;
-  max-width: 700px;
-  border-radius: 8px;
+    background: linear-gradient(135deg, #81ecec, #74b9ff);
+    border-color: #0984e3;
+    color: white;
 }
+
+#recipe h2 {
+    color: white;
+    border-bottom-color: #74b9ff;
+}
+
+#recipe p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
 #announcement {
-  background-color: #e8f5e9;
-  padding: 1.5em;
-  margin: 1em auto;
-  max-width: 700px;
-  border-radius: 8px;
+    background: linear-gradient(135deg, #fd79a8, #e84393);
+    border-color: #e84393;
+    color: white;
+    text-align: center;
 }
+
+#announcement h2 {
+    color: white;
+    border-bottom-color: #fd79a8;
+}
+
+#announcement p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
 footer {
-  text-align: center;
-  padding: 1em;
-  background-color: #2e7d32;
-  color: white;
-  margin-top: 2em;
+    background: linear-gradient(45deg, #2d3436, #636e72);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    box-shadow: 0 -4px 15px rgba(45, 52, 54, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
 }
