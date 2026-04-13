@@ -75,9 +75,14 @@ Steps:
 ANNOUNCEMENT:
 FreshMart is open Monday to Saturday 8am to 9pm and Sunday 9am to 7pm.
 
-Now write your OWN version following that exact format. Choose a completely
-original theme appropriate for the current season. Different items, different
-theme, different recipe, different announcement. Plain text only.\
+Now write your OWN version following that exact format. Choose a theme that
+is specific, unexpected, and creative — not just a season or holiday. Think
+along the lines of a vibe, a cuisine, a lifestyle moment, a color, a place,
+or a feeling. Examples of the KIND of creative direction to aim for (do not
+use these exact themes): Backyard BBQ Night, Mediterranean Escape, Rainy Day
+Comfort, Farmers Market Morning, Game Day Spread, Late Night Snack Run.
+Different items, different theme, different recipe, different announcement.
+Plain text only.\
 """
 
 CODER_AGENT_PROMPT = """\
