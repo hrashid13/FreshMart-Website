@@ -1,115 +1,145 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Georgia', 'Times New Roman', serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f0f9f0 0%, #e8f5e8 100%);
-    color: #2d5016;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #2c3e50;
+    min-height: 100vh;
 }
 
 header {
-    background: linear-gradient(135deg, #4a7c59 0%, #2d5016 100%);
-    color: white;
-    padding: 1.5rem;
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: #f4f1eb;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(77, 124, 89, 0.3);
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(45, 80, 22, 0.5);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    letter-spacing: 1px;
 }
 
 header p {
     margin: 0.5rem 0 0 0;
     font-size: 1.1rem;
-    opacity: 0.95;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 .card {
-    background: white;
-    border: 2px solid #7fb069;
+    background: linear-gradient(135deg, #f4f1eb 0%, #faf8f3 100%);
+    border: 3px solid #d2691e;
     border-radius: 15px;
     padding: 1.5rem;
-    margin: 2rem auto;
-    max-width: 800px;
-    box-shadow: 0 6px 20px rgba(127, 176, 105, 0.25);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(127, 176, 105, 0.35);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
 .card h2 {
-    color: #2d5016;
-    border-bottom: 3px solid #7fb069;
-    padding-bottom: 0.75rem;
-    margin-bottom: 1.5rem;
+    color: #8b4513;
+    margin-top: 0;
     font-size: 1.8rem;
+    border-bottom: 2px solid #deb887;
+    padding-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-.card h3 {
-    color: #4a7c59;
+#deals ul {
+    list-style: none;
+    padding: 0;
+}
+
+#deals li {
+    background: linear-gradient(90deg, #deb887 0%, #f5deb3 100%);
+    margin: 0.8rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 5px solid #cd853f;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+#deals li:hover {
+    background: linear-gradient(90deg, #cd853f 0%, #deb887 100%);
+    color: #f4f1eb;
+}
+
+#recipe h3 {
+    color: #a0522d;
+    font-size: 1.4rem;
     margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
 }
 
-.card ul li {
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
-    position: relative;
+#recipe h3:first-of-type {
+    margin-top: 0.5rem;
+}
+
+#recipe ul, #recipe ol {
     padding-left: 1.5rem;
 }
 
-.card ul li::before {
-    content: "🌿";
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.card p {
-    line-height: 1.7;
-    margin-bottom: 1rem;
-    color: #3d5a2a;
-}
-
-#deals {
-    background: linear-gradient(135deg, #f8fdf5 0%, #f0f9f0 100%);
-    border-color: #7fb069;
-}
-
-#recipe {
-    background: linear-gradient(135deg, #fdfff8 0%, #f5fdf0 100%);
-    border-color: #8bc34a;
+#recipe li {
+    margin: 0.4rem 0;
+    line-height: 1.4;
 }
 
 #announcement {
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-    border-color: #22c55e;
-    border-width: 3px;
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #800000 0%, #a52a2a 100%);
+    color: #f4f1eb;
+    text-align: center;
+    border: 3px solid #b22222;
 }
 
 #announcement h2 {
-    color: #166534;
-    border-bottom-color: #22c55e;
+    color: #f4f1eb;
+    border-bottom: 2px solid #f4f1eb;
+    font-size: 2rem;
 }
 
 footer {
-    background: linear-gradient(135deg, #2d5016 0%, #1a3009 100%);
-    color: white;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #f4f1eb;
     text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-    box-shadow: 0 -4px 12px rgba(45, 80, 22, 0.3);
+    padding: 2rem 1rem;
+    margin-top: 2rem;
 }
 
 footer p {
     margin: 0;
     font-size: 1rem;
     opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .card h2 {
+        font-size: 1.5rem;
+    }
 }
