@@ -1,156 +1,117 @@
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f1eb;
-    color: #3d2914;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #ffffff;
     line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(135deg, #8b4513, #a0522d);
-    color: #f5f5dc;
-    padding: 2rem 0;
+    background: linear-gradient(45deg, #0f0f23, #1a1a2e);
+    color: #ffffff;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+    padding: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 header p {
-    margin: 0.5rem 0 0;
+    margin: 0.5rem 0 0 0;
     font-size: 1.1rem;
-    font-style: italic;
-}
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+    opacity: 0.9;
 }
 
 .card {
-    background: #fff8f0;
-    border: 2px solid #d2b48c;
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border: 2px solid #444;
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 1.5rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(139, 69, 19, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
 
 .card h2 {
-    color: #6f4e37;
-    border-bottom: 3px solid #cd853f;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+    color: #e94560;
+    margin-top: 0;
     font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-#deals {
-    grid-column: 1;
+.card h3 {
+    color: #f39c12;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
 }
 
-#deals ul {
-    list-style: none;
-    padding: 0;
+.card p {
+    margin-bottom: 1rem;
+    color: #cccccc;
 }
 
-#deals li {
-    background: #faf6f0;
-    margin: 0.8rem 0;
-    padding: 1rem;
-    border-left: 5px solid #daa520;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 2px 4px rgba(139, 69, 19, 0.1);
+.card ul {
+    color: #cccccc;
+    padding-left: 1.5rem;
 }
 
-#deals .price {
-    color: #b8860b;
-    font-weight: bold;
-    font-size: 1.1rem;
+.card li {
+    margin-bottom: 0.3rem;
 }
 
-aside {
-    grid-column: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+#deals .card {
+    border-color: #e94560;
+    background: linear-gradient(145deg, #1e1e1e, #2a2030);
 }
 
-#recipe {
-    background: #fdf9f3;
-    border: 2px solid #deb887;
+#deals h3 {
+    color: #ff6b6b;
 }
 
-#recipe h2 {
-    color: #8b4513;
-    border-bottom: 3px solid #daa520;
+#recipe .card {
+    border-color: #f39c12;
+    background: linear-gradient(145deg, #1e1e1e, #2a2520);
 }
 
-#recipe ol {
-    padding-left: 1.2rem;
+#recipe h3 {
+    color: #ffa726;
 }
 
-#recipe li {
-    margin: 0.6rem 0;
-    color: #5d4037;
-}
-
-#announcement {
-    background: linear-gradient(135deg, #f5deb3, #f0e68c);
-    border: 2px solid #daa520;
+#announcement .card {
+    border-color: #9b59b6;
+    background: linear-gradient(145deg, #1e1e1e, #252030);
     text-align: center;
 }
 
 #announcement h2 {
-    color: #8b4513;
-    border-bottom: 3px solid #cd853f;
+    color: #bb86fc;
 }
 
 #announcement p {
     font-size: 1.1rem;
-    color: #6f4e37;
     font-weight: 500;
 }
 
 footer {
-    background: linear-gradient(135deg, #6f4e37, #8b4513);
-    color: #f5f5dc;
+    background: linear-gradient(45deg, #0f0f23, #1a1a2e);
+    color: #ffffff;
     text-align: center;
     padding: 1.5rem 0;
     margin-top: 2rem;
-    box-shadow: 0 -4px 8px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
 }
 
 footer p {
     margin: 0;
-    font-size: 1rem;
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-    
-    aside {
-        grid-column: 1;
-    }
-    
-    header h1 {
-        font-size: 2rem;
-    }
+    opacity: 0.8;
 }
