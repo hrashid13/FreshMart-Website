@@ -1,117 +1,141 @@
 body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    color: #ffffff;
+    background: linear-gradient(135deg, #e8f5e8 0%, #d4f0d4 100%);
+    color: #2d5016;
     line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(45deg, #0f0f23, #1a1a2e);
-    color: #ffffff;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    color: white;
     text-align: center;
     padding: 2rem 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
 }
 
 header p {
     margin: 0.5rem 0 0 0;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     opacity: 0.9;
 }
 
 .card {
-    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
-    border: 2px solid #444;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 1.5rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+    border: 3px solid #228B22;
+    border-radius: 15px;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 800px;
+    box-shadow: 0 8px 25px rgba(34, 139, 34, 0.2);
+    position: relative;
 }
 
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+.card::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #32CD32, #7CFC00, #ADFF2F, #9AFF9A);
+    border-radius: 18px;
+    z-index: -1;
 }
 
 .card h2 {
-    color: #e94560;
-    margin-top: 0;
-    font-size: 1.8rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.card h3 {
-    color: #f39c12;
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-.card p {
+    color: #8B4513;
+    font-size: 2rem;
     margin-bottom: 1rem;
-    color: #cccccc;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-.card ul {
-    color: #cccccc;
-    padding-left: 1.5rem;
+#deals {
+    background: linear-gradient(135deg, #FFFACD 0%, #F0E68C 100%);
 }
 
-.card li {
-    margin-bottom: 0.3rem;
+#deals h2 {
+    color: #B8860B;
 }
 
-#deals .card {
-    border-color: #e94560;
-    background: linear-gradient(145deg, #1e1e1e, #2a2030);
+#deals ul {
+    list-style: none;
+    padding: 0;
 }
 
-#deals h3 {
-    color: #ff6b6b;
+#deals li {
+    background: #FFFFE0;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 6px solid #FF6347;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(255, 99, 71, 0.2);
+    font-size: 1.1rem;
+    color: #8B4513;
 }
 
-#recipe .card {
-    border-color: #f39c12;
-    background: linear-gradient(145deg, #1e1e1e, #2a2520);
+#recipe {
+    background: linear-gradient(135deg, #F5FFFA 0%, #E0FFE0 100%);
+}
+
+#recipe h2 {
+    color: #006400;
 }
 
 #recipe h3 {
-    color: #ffa726;
+    color: #228B22;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
-#announcement .card {
-    border-color: #9b59b6;
-    background: linear-gradient(145deg, #1e1e1e, #252030);
+#recipe ul, #recipe ol {
+    color: #2F4F2F;
+    font-size: 1.05rem;
+}
+
+#recipe li {
+    margin: 0.5rem 0;
+    padding-left: 0.5rem;
+}
+
+#announcement {
+    background: linear-gradient(135deg, #FFF8DC 0%, #FFEFD5 100%);
+    border-color: #CD853F;
     text-align: center;
 }
 
 #announcement h2 {
-    color: #bb86fc;
+    color: #8B4513;
+    font-size: 1.8rem;
 }
 
 #announcement p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: #A0522D;
     font-weight: 500;
 }
 
 footer {
-    background: linear-gradient(45deg, #0f0f23, #1a1a2e);
-    color: #ffffff;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    color: white;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     margin-top: 2rem;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 -4px 12px rgba(139, 69, 19, 0.3);
 }
 
 footer p {
     margin: 0;
-    opacity: 0.8;
+    font-size: 1rem;
+    opacity: 0.9;
 }
