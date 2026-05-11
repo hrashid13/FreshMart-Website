@@ -1,141 +1,144 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #e8f5e8 0%, #d4f0d4 100%);
-    color: #2d5016;
+    background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%);
+    color: #3c2415;
     line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-    color: white;
-    text-align: center;
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: #f5f1eb;
     padding: 2rem 0;
-    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(60, 36, 21, 0.3);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 2.8rem;
     font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
 }
 
 header p {
     margin: 0.5rem 0 0 0;
     font-size: 1.2rem;
     opacity: 0.9;
+    font-style: italic;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .card {
-    background: #ffffff;
-    border: 3px solid #228B22;
+    background: #faf7f2;
+    border: 3px solid #d2b48c;
     border-radius: 15px;
-    margin: 2rem auto;
     padding: 2rem;
-    max-width: 800px;
-    box-shadow: 0 8px 25px rgba(34, 139, 34, 0.2);
+    margin: 2rem 0;
+    box-shadow: 0 8px 20px rgba(60, 36, 21, 0.15);
     position: relative;
+    overflow: hidden;
 }
 
 .card::before {
     content: '';
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, #32CD32, #7CFC00, #ADFF2F, #9AFF9A);
-    border-radius: 18px;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #8b4513, #cd853f, #deb887);
 }
 
 .card h2 {
-    color: #8B4513;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    color: #654321;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    border-bottom: 3px solid #d2b48c;
+    padding-bottom: 0.8rem;
 }
 
 #deals {
-    background: linear-gradient(135deg, #FFFACD 0%, #F0E68C 100%);
+    background: #f9f6f0;
+    border-color: #cd853f;
+}
+
+#deals::before {
+    background: linear-gradient(90deg, #b8860b, #daa520, #f0e68c);
 }
 
 #deals h2 {
-    color: #B8860B;
-}
-
-#deals ul {
-    list-style: none;
-    padding: 0;
-}
-
-#deals li {
-    background: #FFFFE0;
-    margin: 1rem 0;
-    padding: 1rem;
-    border-left: 6px solid #FF6347;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(255, 99, 71, 0.2);
-    font-size: 1.1rem;
-    color: #8B4513;
+    color: #8b4513;
 }
 
 #recipe {
-    background: linear-gradient(135deg, #F5FFFA 0%, #E0FFE0 100%);
+    background: #f7f4ee;
+    border-color: #deb887;
+}
+
+#recipe::before {
+    background: linear-gradient(90deg, #a0522d, #cd853f, #f4a460);
 }
 
 #recipe h2 {
-    color: #006400;
-}
-
-#recipe h3 {
-    color: #228B22;
-    font-size: 1.4rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.8rem;
-}
-
-#recipe ul, #recipe ol {
-    color: #2F4F2F;
-    font-size: 1.05rem;
-}
-
-#recipe li {
-    margin: 0.5rem 0;
-    padding-left: 0.5rem;
+    color: #8b4513;
 }
 
 #announcement {
-    background: linear-gradient(135deg, #FFF8DC 0%, #FFEFD5 100%);
-    border-color: #CD853F;
-    text-align: center;
+    background: #f8f5f0;
+    border-color: #d2691e;
+    border-width: 4px;
+}
+
+#announcement::before {
+    background: linear-gradient(90deg, #d2691e, #ff8c00, #ffa500);
+    height: 8px;
 }
 
 #announcement h2 {
-    color: #8B4513;
-    font-size: 1.8rem;
+    color: #8b4513;
+    text-align: center;
 }
 
 #announcement p {
-    font-size: 1.2rem;
-    color: #A0522D;
+    text-align: center;
+    font-size: 1.1rem;
     font-weight: 500;
 }
 
 footer {
-    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
-    color: white;
+    background: linear-gradient(135deg, #654321 0%, #8b4513 100%);
+    color: #f5f1eb;
     text-align: center;
     padding: 2rem 0;
-    margin-top: 2rem;
-    box-shadow: 0 -4px 12px rgba(139, 69, 19, 0.3);
+    margin-top: 3rem;
+    box-shadow: 0 -4px 12px rgba(60, 36, 21, 0.2);
 }
 
 footer p {
     margin: 0;
     font-size: 1rem;
     opacity: 0.9;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.8rem 0;
+    font-size: 1.05rem;
+}
+
+p {
+    font-size: 1.05rem;
+    margin: 1rem 0;
 }
