@@ -1,136 +1,135 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    color: #ffffff;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+  min-height: 100vh;
 }
 
 header {
-    background: linear-gradient(45deg, #0f0f23, #e94560);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+  background: linear-gradient(135deg, #654321 0%, #8B4513 100%);
+  color: #F5DEB3;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    letter-spacing: 2px;
+  margin: 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
 }
 
 header p {
-    margin: 0.5rem 0 0 0;
-    font-size: 1.2rem;
-    opacity: 0.9;
+  margin: 0.5rem 0 0 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
 }
 
 .card {
-    background: linear-gradient(145deg, #1e1e3f, #2a2a5a);
-    border: 2px solid #e94560;
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 800px;
-    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.2), inset 0 1px 3px rgba(255, 255, 255, 0.1);
-    position: relative;
+  background: #FFF8DC;
+  border: 3px solid #CD853F;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #e94560, #f2a365, #e94560);
-    border-radius: 17px;
-    z-index: -1;
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card h2 {
-    color: #f2a365;
-    margin-top: 0;
-    font-size: 2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.card h3 {
-    color: #ff6b6b;
-    margin-top: 1.5rem;
-    font-size: 1.4rem;
+  color: #8B4513;
+  margin-top: 0;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #DEB887;
+  padding-bottom: 0.5rem;
 }
 
 .card ul {
-    list-style: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .card li {
-    background: rgba(233, 69, 96, 0.1);
-    margin: 0.8rem 0;
-    padding: 1rem;
-    border-left: 4px solid #e94560;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+  background: #F5F5DC;
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border-left: 4px solid #CD853F;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.card li:hover {
-    background: rgba(233, 69, 96, 0.2);
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(233, 69, 96, 0.3);
-}
-
-.card strong {
-    color: #f2a365;
-    font-weight: bold;
+.card .price {
+  color: #A0522D;
+  font-weight: bold;
+  float: right;
+  font-size: 1.1rem;
 }
 
 #deals {
-    background: linear-gradient(145deg, #2a1810, #3d2818);
+  grid-column: 1 / -1;
 }
 
-#deals::before {
-    background: linear-gradient(45deg, #f39c12, #e94560, #f39c12);
+#deals .card {
+  background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+  border-color: #A0522D;
 }
 
-#recipe {
-    background: linear-gradient(145deg, #1a2e1a, #2e4a2e);
+#recipe .card {
+  background: #FFFAF0;
+  border-color: #DEB887;
 }
 
-#recipe::before {
-    background: linear-gradient(45deg, #27ae60, #e94560, #27ae60);
+#recipe h3 {
+  color: #8B4513;
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: 1.3rem;
 }
 
-#recipe h2 {
-    color: #2ecc71;
+#recipe ol {
+  color: #654321;
+  line-height: 1.6;
 }
 
-#announcement {
-    background: linear-gradient(145deg, #2e1a2e, #4a2e4a);
-}
-
-#announcement::before {
-    background: linear-gradient(45deg, #9b59b6, #e94560, #9b59b6);
+#announcement .card {
+  background: linear-gradient(135deg, #F4A460 0%, #DEB887 100%);
+  border-color: #8B4513;
+  text-align: center;
 }
 
 #announcement h2 {
-    color: #e74c3c;
+  color: #654321;
+}
+
+#announcement p {
+  color: #5D4037;
+  font-size: 1.1rem;
+  margin: 1rem 0;
 }
 
 footer {
-    background: linear-gradient(45deg, #0f0f23, #e94560);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-    box-shadow: 0 -4px 15px rgba(233, 69, 96, 0.3);
+  background: linear-gradient(135deg, #654321 0%, #3E2723 100%);
+  color: #F5DEB3;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
 }
 
 footer p {
-    margin: 0;
-    font-size: 1rem;
-    opacity: 0.9;
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
 }
