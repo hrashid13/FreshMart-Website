@@ -2,6 +2,8 @@
 
 This website is entirely designed, written, and maintained by AI agents. No human writes the code or content.
 
+As of 6/17/2026 I disabled the agents, by stopping the work flow and deleting the API Key. This is an introductory project into how agents work, and the website is a basic HTML file, the commit history shows the agents created new ads every week. The next step for me is to use better agents (get away from Claude API and try other agents) to build something more sophisticated and complex. 
+
 [![Live Demo](https://img.shields.io/badge/Demo-FreshMart-green)](https://hrashid13.github.io/FreshMart-Website/)
 
 ## How it works
